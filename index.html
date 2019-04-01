@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Projekt 1 - Karolina Placek</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="shortcut icon" href="icon.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPoppins:300,400,500&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container--sort">
+      <canvas id="canvas-trails" width="1000" height="500"></canvas>
+      <canvas id="canvas-rows" width="1000" height="500"></canvas>
+      <canvas id="canvas-movement" width="1000" height="500"></canvas>
+      <div class="counter-container">
+        Liczba zamian:
+        <span id="counter">0</span>
+      </div>
+    </main>
+
+    <section class="container--form">
+      <header class="header">
+        <h2>Wizualizacja algorytmu <br/> sortowania bąbelkowego</h2>
+      </header>
+
+      <div class="controls">
+        <div class="controls__button">
+          <button onclick="visualize()"><i class="fas fa-play"></i></button>
+          <div class="tooltip"> Start </div>
+        </div>
+        <div class="controls__button">
+          <button onclick="reset()"><i class="fas fa-undo-alt"></i></button>
+          <div class="tooltip"> Reset </div>
+        </div>
+        <div class="controls__button">
+          <button onclick="randomize()"><i class="fas fa-random"></i></button>
+          <div class="tooltip"> Wymieszaj </div>
+        </div>
+      </div>
+
+      <div class="select--size">
+        <label>Liczebność zbioru</label>
+        <div class="input-spinner">
+          <button class="input-prepend" onclick="onChangeSizeDown()"><i class="fas fa-minus"></i></button>
+          <button class="input-append" onclick="onChangeSizeUp()"><i class="fas fa-plus"></i></button>
+          <div class="size" data-value="5" onchange="onChangeSize()">5</div>
+        </div>
+      </div>
+
+      <div class="select--color">
+        <label>Kolor</label>
+        <ul>
+          <li id="select-red" class="color" data-value="230,38,31"></li>
+          <li id="select-orange" class="color" data-value="235,117,50"></li>
+          <li id="select-yellow" class="color" data-value="247,208,56"></li>
+          <li id="select-green" class="color" data-value="163,224,72"></li>
+          <li id="select-turquoise" class="color" data-value="73,218,154"></li>
+          <li id="select-blue" class="color active" data-value="52,187,230"></li>
+          <li id="select-violet" class="color" data-value="67,85,219"></li>
+        </ul>
+      </div>
+
+      <footer>
+        <p class="docs-link" onclick="onDocsOpen()">
+          Dokumentacja
+        </p>
+      </footer>
+
+      <div class="docs-container">
+        <div class="docs">
+          <i class="icon fas fa-times" onclick="onDocsClose()"></i>
+          <h2>Dokumentacja</h2>
+          <h4>Zawartość merytoryczna projektu</h4>
+          Tematem projektu jest animacja pokazująca kolejne kroki sortowania bąbelkowego za pomocą technologii Canvas.
+          <h4>Język HTML5</h4>
+          Użyte elementy sematyczne: &lt;main&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer&gt;. <br />
+          Wizualizacja prezentowana jest przy użyciu trzech elementów &lt;canvas&gt;: statyczne rzędy kółek, poruszające się kółka i ślady przebytych ścieżek.
+          <h4>JavaScript w projekcie</h4>
+          Modyfikacja elemetów HTML i styli: "getElementsByClassName", "getElementById", "innerHTML", "style.visibility" <br />
+          Obsługa zdarzeń: "addEventListener", "playSound()", "onChange...()", "reset()", "randomize()" <br />
+          Animacje: "window.scrollTo", "clearRect", "beginPath", "arc", "fill", "animateRows()", "animateTrails()", "animateMovement()"
+          <h4>Dodatkowe funkcjonalności</h4>
+          Technologia WebWorker została użyta do zliczania liczby zamian podczas sortowania. Licznik znajduje się w lewym dolnym rogu ekranu.
+          <h4>Walidacja projektu</h4>
+          Projekt został wykonany zgodnie ze standardami HTML5 i CSS i poprawnie waliduje się na stronie W3C. <br />
+          Testowany w przeglądarce Mozilla Firefox.
+          <br /> <br /> <br />
+          Projekt wykonała <b>Karolina Placek</b>.
+        </div>
+      </div>
+
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
