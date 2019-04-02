@@ -75,16 +75,6 @@ function onChangeSize() {
   clearData();
 }
 
-function onDocsOpen() {
-  document.getElementsByClassName("docs-container")[0].style.visibility = "visible";
-  document.getElementsByClassName("docs-container")[0].style.opacity = "1";
-}
-
-function onDocsClose() {
-  document.getElementsByClassName("docs-container")[0].style.opacity = "0";
-  setTimeout(function(){ document.getElementsByClassName("docs-container")[0].style.visibility = "hidden"; }, 400);
-}
-
 function init() {
   pegs = [];
   for(var i = 0; i < size; i++) {
@@ -273,7 +263,7 @@ function startWorker() {
       document.getElementById("counter").innerHTML = event.data;
     };
   } else {
-    document.getElementById("counter").innerHTML = "Web worker nie jest obsługiwany przez tę przeglądarkę.";
+    document.getElementById("counter").innerHTML = "Web worker is not available for this browser.";
   }
 }
 
