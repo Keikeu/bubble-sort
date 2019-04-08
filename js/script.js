@@ -26,11 +26,6 @@ for (var i = 0; i < colorsSelect.length; i++) {
   colorsSelect[i].addEventListener("click", onChangeColor)
 }
 
-function playSound() {
-  var sound = new Audio("sorted.mp3");
-  sound.play();
-}
-
 function clearData() {
   ctxr.clearRect(0, 0, cr.width, cr.height);
   ctxt.clearRect(0, 0, ct.width, ct.height);
@@ -237,9 +232,6 @@ function visualize() {
       if(i+1 < rows.length) {
         requestAnimationFrame(anim);
       }
-      else {
-        playSound();
-      }
     }
     anim();
   }
@@ -251,7 +243,7 @@ startWorker();
 
 
 
-// =========================================================================
+// ============================= web worker ====================================
 var w;
 
 function startWorker() {
