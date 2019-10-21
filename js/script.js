@@ -249,7 +249,7 @@ var w;
 function startWorker() {
   if (typeof(Worker) !== "undefined") {
     if (typeof(w) == "undefined") {
-      w = new Worker("worker.js");
+      w = new Worker("./js/worker.js");
     }
     w.onmessage = function(event) {
       document.getElementById("counter").innerHTML = event.data;
